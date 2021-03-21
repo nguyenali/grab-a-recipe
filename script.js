@@ -11,4 +11,9 @@ function getMealList(){
     let serachInputTxt = document.getElementById
     ('search-input').value.trim();
     console.log(serachInputTxt);
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${serachInputTxt}`)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
 }
